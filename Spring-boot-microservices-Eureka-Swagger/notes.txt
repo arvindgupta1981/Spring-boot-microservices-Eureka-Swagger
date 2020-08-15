@@ -1,0 +1,6 @@
+netstat -aon |find /i "listening" |find "8282"
+taskkill /f /pid pid
+-----------------------------
+Ubuntu Ip Address
+ip address
+------------------------
