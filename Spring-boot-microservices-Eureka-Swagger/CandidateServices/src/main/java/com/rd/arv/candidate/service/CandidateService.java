@@ -6,5 +6,6 @@ package com.rd.arv.candidate.service;
 import com.rd.arv.candidate.entity.Candidate;
 
 public interface CandidateService {
-	Candidate findById(Long id);	
+	Candidate findById(Long id);
+	Candidate save(Candidate candidate);
 }

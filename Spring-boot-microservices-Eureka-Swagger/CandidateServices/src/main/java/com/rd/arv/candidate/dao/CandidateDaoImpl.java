@@ -5,6 +5,7 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -28,5 +29,15 @@ public class CandidateDaoImpl implements CandidateDao {
 		TypedQuery<Candidate> query = session.getNamedQuery("findCandidateById");
 		query.setParameter("id", id);
 		return query.getSingleResult();
+	}
+
+	@Override
+	public Candidate save(Candidate candidate) {
+		Session session = this.sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		session.save(candidate);
+		transaction.commit();
+		session.close();
+		return candidate;
 	}
 }

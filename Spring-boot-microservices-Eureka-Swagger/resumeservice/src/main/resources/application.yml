@@ -1,0 +1,12 @@
+#https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
+server:
+  port: 8182
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, env, configprops
+  metrics:
+    export:
+      atlas:
+        enabled: false

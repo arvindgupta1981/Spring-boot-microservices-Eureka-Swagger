@@ -12,6 +12,10 @@
   <modules>  	
   	<module>CandidateServices</module>
   	<module>configurations-server</module>
+  	<module>resumeservice</module>
+  	<module>netflix-eureka-server</module>
+  	<module>applyjobservice</module>
+  	<module>models</module>
   </modules>
   
   <dependencyManagement>

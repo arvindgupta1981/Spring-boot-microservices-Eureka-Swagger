@@ -25,5 +25,10 @@ public class CandidateServiceImpl implements CandidateService {
 	@Override
 	public Candidate findById(Long id) {
 		return candidateDao.findById(id);
-	}	
+	}
+	
+	@Override
+	public Candidate save(Candidate candidate) {
+		return candidateDao.save(candidate);
+	}
 }
