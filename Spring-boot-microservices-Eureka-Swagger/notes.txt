@@ -4,3 +4,36 @@ taskkill /f /pid pid
 Ubuntu Ip Address
 ip address
 ------------------------
+
+Eureka - cloud discovery service
+Ribbon - Client side load balancer a cache of physical address of the server at client
+Zuul - a reverse proxy, client never know the actual Url, not api gateway, use for calling from browser  
+Zuul - (Gateway) provides a way to call eureka service registered service by url - mapping Url to Eureka services regitry`
+http://localhost:8585/candidate/candidate/find/1 = http://localhost:8181/candidate/find/1
+Feign - cloud Routing
+Client -> Proxy-zuul -> Eureka Service -> call the actual service
+
+Kubernetes - meaning pilot
+Manage containers as cluster of contianers
+Expose conainer as DNS or Ip address
+Load balancing of incoming request
+Automatic creates new conainers or removed conainers
+Manage CPU and RAM in each container
+Detech fail container and heals
+Store OAuth tokens and ssh keys
+
+OAuth2
+------
+Authorization Server - Authorize the request
+Resource Server  - provides access token to client
+ÒAuth2 - Framework
+
+
+Pending list
+--------------
+1- Ribbon configuration setup
+2- sql db properties correction 
+3- OAuth2
+4- Test Junit & BDD Gharkins
+5- Maven Profiling
+6- Docker

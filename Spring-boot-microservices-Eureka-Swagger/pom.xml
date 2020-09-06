@@ -16,6 +16,8 @@
   	<module>netflix-eureka-server</module>
   	<module>applyjobservice</module>
   	<module>models</module>
+  	<module>api-gateway</module>
+  	<module>OAuth2Security</module>
   </modules>
   
   <dependencyManagement>

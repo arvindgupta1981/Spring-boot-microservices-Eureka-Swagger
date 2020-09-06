@@ -21,8 +21,8 @@ public class Resume {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name = "name")
-	private String candidateId;
+	@Column(name = "candidate_id")
+	private Long candidateId;
 	@Column(name = "education")
 	private String education;
 	
@@ -32,10 +32,10 @@ public class Resume {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getCandidateId() {
+	public Long getCandidateId() {
 		return candidateId;
 	}
-	public void setCandidateId(String candidateId) {
+	public void setCandidateId(Long candidateId) {
 		this.candidateId = candidateId;
 	}
 	public String getEducation() {

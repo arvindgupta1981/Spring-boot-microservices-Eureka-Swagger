@@ -1,4 +1,4 @@
-package com.rd.arv.service.dao;
+package com.rd.arv.resume.dao;
 
 
 import javax.persistence.TypedQuery;

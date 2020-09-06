@@ -3,8 +3,8 @@ package com.rd.arv.resume.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rd.arv.resume.dao.ResumeDao;
 import com.rd.arv.resume.entity.Resume;
-import com.rd.arv.service.dao.ResumeDao;
 
 @Service
 public class ResumeServiceImpl implements ResumeService {

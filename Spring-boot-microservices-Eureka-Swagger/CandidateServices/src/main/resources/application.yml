@@ -10,3 +10,11 @@ management:
     export:
       atlas:
         enabled: false
+spring:
+   h2:
+   console:
+      enabled: true
+      path: /h2-console  
+      settings:
+         trace: false  
+         web-allow: false    

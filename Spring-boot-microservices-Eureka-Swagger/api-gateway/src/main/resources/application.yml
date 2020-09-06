@@ -1,0 +1,27 @@
+#https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
+server:
+  port: 8585
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, env, configprops
+  metrics:
+    export:
+      atlas:
+        enabled: false
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+              
+zuul:
+  routes:
+    candidate:
+      path: /candidate/**
+      serviceId: candidateservice
+    resume:
+      path: /resume/**
+      serviceId: resumeservice
+    applyjob:
+      path: /applyjob/**
+      serviceId: applyjobservice

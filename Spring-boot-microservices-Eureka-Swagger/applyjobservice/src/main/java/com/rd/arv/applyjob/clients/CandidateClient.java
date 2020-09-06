@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.rd.arv.candidate.entity.Candidate;
 //Feign creates a Ribbon load balancer at client side
-@FeignClient(name = "CANDIDATESERVICE", configuration = CanididateServiceConfiguration.class)
+@FeignClient(name = "candidateservice")
 public interface CandidateClient {
-	@GetMapping(value = "/find/{id}")
+	@GetMapping(value = "/candidate/find/{id}")
 	public Candidate find(@PathVariable Long id); 	
 }
