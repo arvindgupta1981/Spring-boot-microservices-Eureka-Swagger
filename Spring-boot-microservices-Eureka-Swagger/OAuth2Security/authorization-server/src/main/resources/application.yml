@@ -1,0 +1,58 @@
+#https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
+server:
+  port: 8686
+logging:
+  level:
+    root: debug    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, env, configprops
+  metrics:
+    export:
+      atlas:
+        enabled: false
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?useSSL=false
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+    platform: mysql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: validate
+#Form encoded data username: arv  password: arv1981
+#  security:
+#     user:
+#       name: arv
+#       password: arv1981
+#       roles: ADMIN,USER
+
+#BASIC AUTH user: mobile, password: pin , grant_type: password     
+#security:
+#  oauth2:
+#    client:
+#      client-id: candidateapp
+#      client-secret: 1981
+#      access-token-validity-seconds: 3600
+#      authorized-grant-types: refresh-token,authorization_code,password,client_credentials
+#      scope: READ,WRITE      
+#    authorization:
+#      check-token-access: permitAll
+          
+#http://localhost:8978/oauth/token
+#http://localhost:8978/oauth/check_token?token=066504fd-482c-4ebc-9e55-5ab0ece6523c + basic Auth - validate token
+#https://www.youtube.com/watch?v=NhY8q5B0s-s
+
+#check-user-scopes: true
