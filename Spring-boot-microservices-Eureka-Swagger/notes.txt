@@ -27,7 +27,99 @@ OAuth2
 Authorization Server - Authorize the request
 Resource Server  - provides access token to client
 ÒAuth2 - Framework
+Spring security - automatically start redirecting pages after adding the dependency in pom.
 
+App Security
+-----------------
+Who are you ? username and password
+What do you want? Role and Permissions
+Login/Logout
+Allow/block access of a resource/url for a particular user or role based user
+
+Benefits of Spring Security
+------------------
+handle automatically Session Fixation
+handle automatically Clickjacking
+handle automatically click site request forgery	
+
+What Spring Security can do
+--------------------------
+Username/password Authentications
+SSO/Okta/LDAP
+App level Authorization
+Intra App Authorization like OAUTH
+Microservices security (using tokens, JWT)
+Method level security
+
+Spring Security Concepts
+-----------------------
+Authentication - Who are you - id - username/password, key, token etc. Multi factor authentication password + phone text etc 
+Authorization - you are authorize to access the resource
+Principal - Currently logged in user, Authenticated user, you don't need to login for each page in web app. prinicipal stored into session
+Permissions/Granted Authority - Read/write etc. on a resource for a user
+Role  - Group of authorities. A user can have a role
+
+Implementation
+-----------------
+Add Springboot project
+Add Springboot starter web dependency
+Add Springboot Starter Security dependency - Add mandatory authtications for all urls, add login page, add login error handle page, add default user/password It'll automatically redirect a url into login page, add a spring security filter for all request
+Add A rest API method
+
+
+
+How can set username and password in Spring Security
+------------------------------------------------------
+1) Default login password:- you can get password from console, copy it and paste into passowrd field, Username is user
+
+2) Add username and password into application.properties
+spring.security.user.name
+spring.security.user.password
+
+3) Customize which url requried access, authentication from database, exytends WebSecurityConfigurerAdapter 
+Override authicate method of AuthenticationManager class, require username, password and role to authenticate
+use authenticationmanagerbuilder to build authentication
+configure method (httpsecurity) hold authenticationmanager - (Configure Authorization) allow to customize authenticationmanagerbuilder, set urls public/private, role based access etc
+configure method (authmanager) - (Configure Authentication) overidee amd pass userdetailsservice to validate user/password/roles/permission etc
+Type of AuthenticateManager
+in-Memory, userdetailservice
+
+http.authorizerequests() take path roles mapping antmatcher, we can chaange authentication type like formbased auth etc.
+override getPasswordencoder to set password encoder - Nopasswordencoder.getInstance()
+
+logout - by calling http://localhost:8080/logout
+
+What is Oauth - for Authorization between services not authentication not for user authrztn,
+like - Print service wants to access google drive, google drives call to user to allow access, 
+Google Drive issue a token (contains authorization Role for access only G Drive) to print service 
+Google Drive - Resource or Resource Server (Add a Authorization layer to issue less authorize token)
+user - Resource Owner
+Print Service - client 
+
+OAUTH Flow
+-----------
+User connect to print service to print Google Drive Photo
+Print Service connect to Google Drive Authrizatio server and demand access
+G Drive Auth server connect to user and get permissions about print service from user
+G Drive Auth server issue a token to print service and ask what do you want to access (can be ignore)
+Print service return the token to Auth server and information about the resource (can be ignore)
+G Drive Auth server issue another token with information of access of resource to Print Service
+Print Service connect to G Drive with token 
+G Drive validate the token and return the resource to print service
+
+We can ignore two steps where we need a short lived tokens required. 
+
+Microservice flow - only use for trusted clients
+-------------------
+Microservice A connect to Auth server and demand access of a resource of microservice B with user password
+Auth server issue the token with authorization to Microservice A
+Microservice A connect with Microservice B with Token
+Microservice B validate Token and grant access
+
+Springboot OAUTH2 
+https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html5/
+
+ 
 
 Pending list
 --------------

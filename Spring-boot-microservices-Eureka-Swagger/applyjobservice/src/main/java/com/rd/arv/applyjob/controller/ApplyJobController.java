@@ -14,7 +14,7 @@ import com.rd.arv.applyjob.starter.ApplyJobApplication;
 @RestController
 @RequestMapping(path = "/applyjob")
 public class ApplyJobController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ApplyJobApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ApplyJobController.class);
 	
 	@Autowired
 	private CandidateClient candidateClient; 
