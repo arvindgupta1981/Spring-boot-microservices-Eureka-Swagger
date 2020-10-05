@@ -25,3 +25,7 @@ zuul:
     applyjob:
       path: /applyjob/**
       serviceId: applyjobservice
+    authorization:
+      path: /authorization/**
+      sensitiveHeaders: Cookie,Set-Cookie
+      serviceId: authorizationserver
