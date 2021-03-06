@@ -18,7 +18,9 @@
   	<module>models</module>
   	<module>api-gateway</module>
   	<module>OAuth2Security</module>
-  	<module>central-oauth2-auth-server</module>
+  	<!--  module>central-oauth2-auth-server</module-->
+  	<module>pojo</module>
+  	<module>mysql-remotejobs</module>
   </modules>
   
   <dependencyManagement>

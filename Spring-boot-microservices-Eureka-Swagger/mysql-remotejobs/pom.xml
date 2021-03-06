@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.rd.arv</groupId>
+    <artifactId>Spring-boot-microservices-Eureka-Swagger</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>mysql-remotejobs</artifactId>
+  
+  <build>
+  	<plugins>
+  	<!-- Remove existing image from local repo 
+  	  	
+  		<plugin>
+  			<groupId>org.codehaus.mojo</groupId>
+  			<artifactId>exec-maven-plugin</artifactId>
+  			<executions>
+  				<execution>
+  					<id>docker-clean</id>
+  					<phase>install</phase>
+  					<goals>
+  						<goal>exec</goal>
+  					</goals>
+  					<configuration>
+  						<executable>docker</executable>
+  						<workingDirectory>${project.basedir}</workingDirectory>
+  						<arguments>
+  							<argument>rmi</argument>
+  							<argument>${project.groupid}/${project.artifactid}:${project.version}</argument>
+  						</arguments>
+  					</configuration>
+  				</execution>
+  			</executions>
+  		</plugin>  		-->
+  		
+  		<plugin>
+	      <groupId>com.spotify</groupId>
+	      <artifactId>docker-maven-plugin</artifactId>
+	      <version>VERSION GOES HERE</version>
+	      <configuration>
+	        <imageName>example</imageName>
+	        <baseImage>java</baseImage>
+	        <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+	        <!-- copy the service's jar file from target into the root directory of the image --> 
+	        <resources>
+	           <resource>
+	             <targetPath>/</targetPath>
+	             <directory>${project.build.directory}</directory>
+	             <include>${project.build.finalName}.jar</include>
+	           </resource>
+	        </resources>
+	      </configuration>
+	    </plugin>
+  	</plugins>
+  </build>
+</project>
