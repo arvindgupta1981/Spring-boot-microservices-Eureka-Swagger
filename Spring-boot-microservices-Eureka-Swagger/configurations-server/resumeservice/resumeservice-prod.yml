@@ -1,0 +1,12 @@
+tracer:
+    property: "I am the Production"
+app:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12359915
+    username: sql12359915
+    password: Y4Pd3lEpwR
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true

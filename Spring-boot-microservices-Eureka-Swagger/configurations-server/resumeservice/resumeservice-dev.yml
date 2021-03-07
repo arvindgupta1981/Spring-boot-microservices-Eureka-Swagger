@@ -1,0 +1,14 @@
+tracer:
+    property: "I am the dev"
+app:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/resume
+    username: root
+    password: mysql
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    
+    
