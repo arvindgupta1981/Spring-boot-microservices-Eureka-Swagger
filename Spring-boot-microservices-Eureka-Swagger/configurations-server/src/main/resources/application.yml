@@ -2,10 +2,11 @@
 server:
    port: 8282
 spring:
-   profiles:
-      active: native
    cloud:
       config:
          server:
             git:
-               uri: file:D:/config/candidateservice, file:D:/config/resumeservice, file:D:/config/applyjobservice
+               uri: https://github.com/arvindgupta1981/spring-config-server-configurations.git
+logging:
+   level:
+      root: DEBUG
