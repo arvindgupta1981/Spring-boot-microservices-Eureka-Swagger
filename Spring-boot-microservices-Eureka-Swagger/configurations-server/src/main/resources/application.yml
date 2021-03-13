@@ -11,4 +11,4 @@ spring:
                uri: https://github.com/arvindgupta1981/spring-config-server-configurations
 logging:
    level:
-      root: DEBUG
+      root: INFO
