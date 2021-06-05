@@ -5,25 +5,18 @@ version: '3'
 networks:
  frontendnetwork:   
   external: true
-services:
- eureka-service-registry:
-  image: 'pc1204a/netflix-eureka-server:v0.1'
-  container_name: eureka-service-registry-v01
-  hostname: registry
-  #links:
-  # - 'configuration-server'
-  networks:
-   frontendnetwork:   
-    #ipv4_address: 172.21.0.10
-  ports:
-   - '8761:8761'
-  depends_on:
-   - 'configuration-server'
- configuration-server:
-  image: 'pc1204a/configurations-server:v01'
-  container_name: configurations-server-v01  
+services: 
+ candidate-service:
+  image: 'pc1204a/candidate-service:v01'
+  #container_name: candidate-service
+  links:
+   - 'configurations-server'
+   - 'eureka-service-registry'
+   - 'mysqldb'
   networks:
    frontendnetwork:
     #ipv4_address: 172.21.0.11
+  #expose:
+   #- 8181
   ports:
-   - '8282:8282'
+   - '8181-8182:8181'
