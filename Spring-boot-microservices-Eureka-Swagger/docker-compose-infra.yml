@@ -74,6 +74,19 @@ services:
    - /usr/local/bin/docker:/usr/local/bin/docker
   environment:
    - JAVA_OPTS=-Dhudson.model.DownloadService.noSignatureCheck=true
+ api-gateway:
+  image: 'pc1204a/api-gateway:v01'
+  #container_name: api-gateway
+  links:
+   - 'configurations-server'
+   - 'eureka-service-registry'
+  networks:
+   frontendnetwork:
+  ports:
+   - '8581-8585:8585'
+  depends_on:
+   - 'configurations-server'
+   - 'eureka-service-registry'
  candidate-service:
   image: 'pc1204a/candidate-service:v01'
   #container_name: candidate-service
@@ -91,4 +104,4 @@ services:
   depends_on:
    - 'configurations-server'
    - 'mysqldb'
-   - 'eureka-service-registry' 
+   - 'eureka-service-registry'
