@@ -1,0 +1,12 @@
+How to Run:- 
+
+-Obtain a toket
+URL: http://localhost:8090/oauth/token
+Method: post
+Header: Authorization vlue: username (candidateapp) & Password (1981)
+Body: 
+grant_type - client_credentials
+Body_contentType: application/X-www-formUrlEncoded (optional)
+scope - mobileclient (optional)
+
+-Validate a tocket

@@ -1,0 +1,1000 @@
+  445  cd ..
+  446  git pull
+  447  cd CandidateServices/
+  448  vi Dockerfile 
+  449  cd ..
+  450  git pull
+  451  ll
+  452  rm -rf Spring-boot-microservices-Eureka-Swagger/
+  453  ll
+  454  git clone https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git
+  455  ll
+  456  cd Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+  457  mvn clean install
+  458  cd CandidateServices/
+  459  sudo docker build -t candidate-server-docker:v0.1 .
+  460  vi Dockerfile 
+  461  gedit Dockerfile 
+  462  sudo docker build -t candidate-server-docker:v0.1 .
+  463  \sudo docker images
+  464  sudo docker run -p 8181:8181 98a
+  465  wget
+  466  cd ..
+  467  ll
+  468  wget http://localhost:8282/candidateservice/dev
+  469  ll
+  470  vi dev 
+  471  rm -rf dev 
+  472  git pull
+  473  ll
+  474  cd Spring-boot-microservices-Eureka-Swagger/
+  475  ll
+  476  git pull
+  477  netflix-eureka-server/
+  478  ll
+  479  cd netflix-eureka-server/
+  480  ll
+  481  pwd
+  482  git info
+  483  git --help
+  484  git pull 
+  485  git reset CandidateServices/Dockerfile
+  486  git pull 
+  487  cd ..
+  488  git pull 
+  489  git reset HEAD CandidateServices/Dockerfile
+  490  git pull 
+  491  cd ..
+  492  ll
+  493  rm -rf Spring-boot-microservices-Eureka-Swagger/
+  494  git clone https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git
+  495  cd Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+  496  mvn clean install
+  497  ll
+  498  cd netflix-eureka-server/
+  499  ll
+  500  sudo docker build -t discovery-server-docker:v0.1 .
+  501  sudo docker run -p 8761:8761 1db
+  502  sudo mysql_secure_installation
+  503  service mysql start 
+  504  sudo service mysql status
+  505  mysql -uroot -pmysql
+  506  sudo service mysql restart 
+  507  sudo service mysqld restart 
+  508  mysql -uroot -pmysql
+  509  mysql -uroot -pmysql test
+  510  mysql -uroot -p
+  511  sudo mysql_secure_installation
+  512  sudo service mysql stop  
+  513  sudo service mysql start
+  514  sudo service mysql status
+  515  mysql -uroot -p
+  516  sudo mysql
+  517  mysql -uroot -p
+  518  vi /etc/my.cnf
+  519  cd CandidateServices/
+  520  ll
+  521  vi src/main/resources/application.yml 
+  522  docker ps 
+  523  sudo docker ps 
+  524  vi src/main/resources/bootstrap.yml 
+  525  gedit src/main/resources/bootstrap.yml 
+  526  sudo docker build -t 
+  527  sudo docker build 
+  528  sudo docker build -t candidate-service:v01 .
+  529  gedit ../docker-compose.yml 
+  530  sudo docker tag candidate-service:v01 pc1204a/candidate-service:v01
+  531  sudo docker-compose up -d
+  532  docker ps
+  533  sudo docker ps
+  534  sudo docker run candidate-service:v01
+  535  sudo docker ps
+  536  sudo docker inspect eureka-service-registry-v01
+  537  sudo docker ps
+  538  sudo docker inspect configurations-server-v01
+  539  gedit CandidateServices/src/main/resources/bootstrap.yml 
+  540  cd CandidateServices/
+  541  sudo docker build -t candidate-service:v01 .
+  542  sudo docker tag candidate-service:v01 pc1204a/candidate-service:v01
+  543  sudo docker-compose up -d
+  544  sudo docker ps
+  545  sudo docker logs candidate-service-v01
+  546  gedit docker-compose.yml 
+  547  sudo docker-compose up -d
+  548  gedit docker-compose.yml 
+  549  sudo docker-compose up -d
+  550  sudo docker inspect configurations-server-v01
+  551  sudo docker ps
+  552  gedit docker-compose.yml 
+  553  sudo docker-compose up -d
+  554  sudo docker ps
+  555  sudo docker logs candidate-service-v01
+  556  ll
+  557  gedit docker-compose.yml 
+  558  sudo docker ps
+  559  su dodocker stop eureka-service-registry-v01 
+  560  su docker stop eureka-service-registry-v01 
+  561  su docker stop eureka-service-registry-v01
+  562  su docker stop 774b8e4ad407
+  563  sudo docker rm 774b8e4ad407
+  564  sudo docker stop container eureka-service-registry-v01
+  565  sudo docker ps
+  566  sudo docker stop container configurations-server-v01
+  567  sudo docker ps
+  568  cd CandidateServices/
+  569  gedit src/main/resources/bootstrap.yml 
+  570  sudo docker-compose up -d
+  571  cd ..
+  572  sudo docker-compose up -d
+  573  sudo docker rm configurations-server-v01
+  574  sudo docker-compose up -d
+  575  sudo docker rm eureka-service-registry-v01
+  576  sudo docker-compose up -d
+  577  sudo docker rm candidate-service-v01
+  578  sudo docker-compose up -d
+  579  sudo docker logs candidate-service-v01
+  580  git clone https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git
+  581  ll
+  582  sudo docker ps -a
+  583  sudo docker inspect 490c494b7582
+  584  sudo docker ps -a
+  585  sudo docker inspect 752ac2f8e4c2
+  586  gedit src/main/resources/bootstrap.yml 
+  587  gedit docker-compose.yml 
+  588  sudo docker-compose up -d
+  589  sudo docker logs candidate-service-v01
+  590  sudo docker ps
+  591  sudo docker inspect 7b7dc933284e
+  592  gedit docker-compose.yml 
+  593  cd CandidateServices/
+  594  gedit src/main/resources/bootstrap.yml 
+  595  cd ..
+  596  sudo docker-compose up -d
+  597  sudo docker logs candidate-service-v01
+  598  sudo docket ps 
+  599  sudo docker ps 
+  600  sudo docket ps -a
+  601  sudo docker ps -a
+  602  ll
+  603  stop-containers.sh
+  604  ./stop-containers.sh
+  605  sudo ./stop-containers.sh
+  606  gedit stop-containers.sh 
+  607  sudo docker stop eureka-service-registry-v01
+  608  sudo docker stop configurations-server-v01
+  609  sudo docker stop candidate-service-v01
+  610  gedit stop-containers.sh 
+  611  sudo docker stop eureka-service-registry-v01
+  612  sudo docker stop configurations-server-v01
+  613  sudo docker stop candidate-service-v01
+  614  sudo docker rm candidate-service-v01
+  615  sudo docker rm configurations-server-v01
+  616  sudo docker rm eureka-service-registry-v01
+  617  sudo docker ps -a
+  618  gedit stop-containers.sh 
+  619  sudo docker images
+  620  cd CandidateServices/
+  621  sudo docker build -t pc1204a/candidate-service:v01
+  622  sudo docker build -t pc1204a/candidate-service:v01 .
+  623  sudo docker images
+  624  cd ..
+  625  sudo docker-compose up -d
+  626  sudo docker logs candidate-service-v01
+  627  sudo docker ps 
+  628  sudo docker ps -a
+  629  sudo docker images
+  630  cd CandidateServices/
+  631  sudo docker build -t pc1204a/candidate-service:v02 .
+  632  sudo docker images
+  633  sudo docker build -t pc1204a/candidates-service:v01 .
+  634  sudo docker images
+  635  cd ..
+  636  gedit stop-containers.sh 
+  637  gedit docker-compose.yml 
+  638  sudo docker-compose up -d
+  639  sudo docker logs candidate-service-v01
+  640  cd CandidateServices/
+  641  cd src/main/resources/
+  642  ll
+  643  gedit bootstrap.yml 
+  644  gedit application.yml 
+  645  reboot
+  646  cd workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+  647  sudo docker images
+  648  sudo docker push pc1204a/configurations-server
+  649  sudo docker images ls
+  650  sudo docker  ls
+  651  sudo docker images ls
+  652  sudo docker pull pc1204a/configurations-server
+  653  sudo docker pull pc1204a/configurations-server:v01
+  654  ll
+  655  touch docker-compose.yml
+  656  gedit docker-compose.yml 
+  657  rm docker-compose.yml 
+  658  touch docker-compose.yml
+  659  gedit docker-compose.yml 
+  660  docker-compose up -d
+  661  sudo apt  install docker-compose
+  662  docker-compose up -d
+  663  sudo docker-compose up -d
+  664  ll
+  665  touch docker-compose.yml
+  666  gedit docker-compose.yml 
+  667  docker-compose up -d
+  668  gedit docker-compose.yml 
+  669  docker-compose up -d
+  670  gedit docker-compose.yml 
+  671  docker-compose up -d
+  672  gedit docker-compose.yml 
+  673  docker-compose up -d
+  674  gedit docker-compose.yml 
+  675  docker-compose up -d
+  676  gedit docker-compose.yml 
+  677  docker-compose up -d
+  678  gedit docker-compose.yml 
+  679  docker-compose up -d
+  680  sudo docker-compose up -d
+  681  docker ps
+  682  sudo docker ps
+  683  gedit docker-compose.yml 
+  684  sudo docker images
+  685  cd netflix-eureka-server/
+  686  cd src/main/resources/
+  687  vi application.yml 
+  688  cd ../../../
+  689  cd ..
+  690  gedit docker-compose.yml 
+  691  sudo docker images ls
+  692  sudo docker images 
+  693  sudo docker tag netflix-eureka-server:v0.1 pc1204a/netflix-eureka-server:v0.1
+  694  sudo docker images 
+  695  gedit docker-compose.yml 
+  696  sudo docker compose up -d
+  697  sudo docker compose up
+  698  sudo docker-compose up -d
+  699  gedit docker-compose.yml 
+  700  sudo docker-compose up -d
+  701  gedit docker-compose.yml 
+  702  sudo docker-compose up -d
+  703  gedit docker-compose.yml 
+  704  sudo docker-compose up -d
+  705  gedit docker-compose.yml 
+  706  sudo docker-compose up -d
+  707  gedit docker-compose.yml 
+  708  sudo docker-compose up -d
+  709  sudo docker ps 
+  710  sudo docker images 
+  711  sudo docker rmi 3685383f7b21 
+  712  ll
+  713  cd OAuth2Security/
+  714  ll
+  715  cd authorization-server/
+  716  ll
+  717  vi src/main/resources/application.yml 
+  718  cd ..
+  719  ll
+  720  cd api-gateway/
+  721  ll
+  722  vi src/main/resources/application.yml 
+  723  ll
+  724  cd ../CandidateServices/
+  725  vi src/main/resources/
+  726  vi src/main/resources/application.yml 
+  727  vi src/main/resources/bootstrap.yml 
+  728  cd ..
+  729  ll
+  730  gedit docker-compose.yml 
+  731  sudo docker-compose up -d
+  732  gedit docker-compose.yml 
+  733  sudo docker-compose up -d
+  734  gedit docker-compose.yml 
+  735  sudo docker-compose up -d
+  736  gedit docker-compose.yml 
+  737  sudo docker-compose up -d
+  738  gedit docker-compose.yml 
+  739  sudo docker-compose up -d
+  740  gedit docker-compose.yml 
+  741  sudo docker-compose up -d
+  742  gedit docker-compose.yml 
+  743  docker network ls
+  744  sudo docker network ls
+  745  gedit docker-compose.yml 
+  746  sudo docker network ls
+  747  gedit docker-compose.yml 
+  748  sudo docker-compose up -d
+  749  gedit docker-compose.yml 
+  750  sudo docker-compose up -d
+  751  sudo docker network ls
+  752  gedit docker-compose.yml 
+  753  sudo docker-compose up -d
+  754  gedit docker-compose.yml 
+  755  sudo docker-compose up -d
+  756  sudo docker network inspect frontendv01 
+  757  sudo docker network inspect frontend
+  758  sudo docker network inspect jenkins
+  759  gedit docker-compose.yml 
+  760  sudo docker-compose up -d
+  761  gedit docker-compose.yml 
+  762  sudo docker network create--driver bridge frontendnetwork
+  763  sudo docker network create --driver bridge frontendnetwork
+  764  sudo docker network ls
+  765  gedit docker-compose.yml 
+  766  sudo docker network inspect frontendnetwork
+  767  gedit docker-compose.yml 
+  768  sudo docker-compose up -d
+  769  gedit docker-compose.yml 
+  770  sudo docker-compose up -d
+  771  gedit docker-compose.yml 
+  772  sudo docker-compose up -d
+  773  service network retsart
+  774  cd /etc/init.d/
+  775  ll net*
+  776  service network-manager restart
+  777  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+  778  ll
+  779  sudo docker-compose up -d
+  780  gedit docker-compose.yml 
+  781  sudo docker-compose up -d
+  782  gedit docker-compose.yml 
+  783  sudo docker container inspect eureka-service-registry-v01
+  784  ping eureka-service-registry
+  785  ping 172.21.0.3
+  786  gedit docker-compose.yml 
+  787  sudo docker-compose up -d
+  788  gedit docker-compose.yml 
+  789  sudo docker-compose up -d
+  790  gedit docker-compose.yml 
+  791  sudo docker-compose up -d
+  792  gedit docker-compose.yml 
+  793  sudo docker-compose up -d
+  794  gedit docker-compose.yml 
+  795  sudo docker-compose up -d
+  796  gedit docker-compose.yml 
+  797  sudo docker-compose up -d
+  798  gedit docker-compose.yml 
+  799  sudo docker-compose up -d
+  800  gedit docker-compose.yml 
+  801  sudo docker-compose up -d
+  802  gedit docker-compose.yml 
+  803  sudo docker-compose up -d
+  804  gedit docker-compose.yml 
+  805  sudo docker exec it eureka-service-registry-v01 hostname
+  806  gedit docker-compose.yml 
+  807  sudo docker exec it eureka-service-registry-v01 hostname
+  808  sudo docker exec -it eureka-service-registry-v01 hostname
+  809  gedit docker-compose.yml 
+  810  sudo docker-compose up -d
+  811  gedit docker-compose.yml 
+  812  sudo docker-compose up -d
+  813  sudo docker exec -it eureka-service-registry-v01 hostname
+  814  ping registry
+  815  sudo docker exec -it eureka-service-registry-v01 ping registry
+  816  sudo docker exec -it configurations-server-v01 ping registry
+  817  sudo docker exec -it eureka-service-registry-v01 vi /etc/hosts
+  818  sudo docker exec -it eureka-service-registry-v01 cat /etc/hosts
+  819  gedit docker-compose.yml 
+  820  sudo docker-compose up -d
+  821  gedit docker-compose.yml 
+  822  sudo docker-compose up -d
+  823  gedit docker-compose.yml 
+  824  sudo docker-compose up -d
+  825  gedit docker-compose.yml 
+  826  sudo docker-compose up -d
+  827  sudo docker exec -it eureka-service-registry-v01 cat /etc/hosts
+  828  sudo docker exec -it eureka-service-registry-v01 ping configurations-server-v01
+  829  sudo docker exec -it configurations-server-v01 ping eureka-service-registry-v01
+  830  gedit docker-compose.yml 
+  831  sudo docker-compose up -d
+  832  sudo docker exec -it configurations-server-v01 ping eureka-service-registry-v01
+  833  gedit docker-compose.yml 
+  834  git commit
+  835  git info
+  836  git
+  837  git push 
+  838  git commit
+  839  git add docker-compose.yml 
+  840  git commit
+  841  git push
+  842  git commit --amend
+  843  git log
+  844  git commit https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git
+  845  ls
+  846  git commit docker-compose.yml 
+  847  git commit help 
+  848  git add docker-compose.yml 
+  849  git commit docker-compose.yml 
+  850  git commit 
+  851  git config --global user.name "arvind.mannindia@gmail.com"
+  852  git commit 
+  853  git config --global user.email "arvind.mannindia@gmail.com"
+  854  git commit 
+  855  git commit 'compose'
+  856  git commit --amend
+  857  git log
+  858  git diff
+  859  git commit -a -m 'compose'
+  860  git diff --name-only
+  861  git diff
+  862  gedit docker-compose.yml 
+  863  ll
+  864  service mysqld restart
+  865  mysql -uroot -pmysql
+  866  sudo docker exec -it eureka-service-registry-v01 cat /etc/hosts
+  867  sudo docker ps
+  868  sudo docker ps -a
+  869  sudo docker rm 7f752933baee
+  870  sudo docker rm 30af437e50e0
+  871  sudo docker rm 474cd4c49a5d
+  872  sudo docker rm 9c17b639b1d8
+  873  sudo docker rm d6489d00d4c0
+  874  sudo docker ps -a
+  875  sudo docker rm 05ce6bfe7dfd
+  876  sudo docker exec -it candidate-service-v01 cat /etc/hosts
+  877  gedit docker-compose.yml 
+  878  sudo docker-compose up -d
+  879  docker ps
+  880  sudo docker ps
+  881  sudo docker logs 490c494b7582
+  882  sudo docker exec -it candidate-service-v01 cat /etc/hosts
+  883  sudo docker ps
+  884  sudo docker exec -it 752ac2f8e4c2 cat /etc/hosts
+  885  gedit docker-compose.yml 
+  886  cd CandidateServices/
+  887  gedit src/main/resources/bootstrap.yml 
+  888  sudo docker-compose up -d
+  889  sudo docker ps
+  890  sudo docker logs 490c494b7582
+  891  docker ps
+  892  sudo docker ps
+  893  mysql -uroot -pmysql 
+  894  mysql -uroot -p
+  895  su docker ps
+  896  sudo docker ps
+  897  sudo docker-compose up -d
+  898  sudo docker stop container candidate-service-v01 
+  899  sudo docker stop container candidate-service-v01
+  900  sudo docker stop container eureka-service-registry-v01
+  901  sudo docker ps
+  902  sudo docker stop container 7b7dc933284e
+  903  sudo docker ps -a
+  904  sudo docker rm 9cce48268dc5
+  905  sudo docker rm fa905534411c
+  906  sudo docker rm 7b7dc933284e
+  907  sudo docker-compose up -d
+  908  sudo docker logs 490c494b7582
+  909  sudo docker logs candidate-service-v01
+  910  sudo docker container inspect eureka-service-registry-v01
+  911  sudo docker-compose up -d
+  912  sudo docker logs candidate-service-v01
+  913  cd CandidateServices/
+  914  ll
+  915  sudo docker images
+  916  sudo docker build -t candidate-service .
+  917  sudo docker tag candidate-service pc1204a/configurations-server
+  918  sudo docker images
+  919  sudo docker rmi candidate-service
+  920  sudo docker images
+  921  sudo docker rmi candidate-service:v01
+  922  sudo docker rmi pc1204a/configurations-server:v01
+  923  sudo docker build -t pc1204a/configurations-server:v01 .
+  924  cd ..
+  925  sudo docker-compose up -d
+  926  sudo docker logs candidate-service-v01
+  927  sudo docker images
+  928  gedit docker-compose.yml 
+  929  sudo docker rmi pc1204a/candidate-service:v01
+  930  sudo docker images
+  931  sudo docker rmi candidateservices:0.1
+  932  sudo docker images
+  933  sudo docker rmi 43e4085106aa
+  934  sudo docker images
+  935  sudo docker rmi 82db495c69d0
+  936  sudo docker images
+  937  cd CandidateServices/
+  938  sudo docker build -t pc1204a/configurations-server:v01 .
+  939  sudo docker images
+  940  sudo docker rmi fc7d009a8efb
+  941  sudo docker ps
+  942  sudo docker ps -a
+  943  sudo docker rm eabee37d30b8
+  944  sudo docker ps -a
+  945  sudo docker ps 
+  946  sudo docker stop 4cfe9c30724d
+  947  touch stop-containers.sh
+  948  mv stop-containers.sh ../
+  949  cd..
+  950  ll
+  951  cd ..
+  952  ll
+  953  vi stop-containers.sh 
+  954  gedit stop-containers.sh 
+  955  gedit docker-compose.yml 
+  956  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/
+  957  su
+  958  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+  959  ll
+  960  su
+  961  whoami
+  962  mvn clean install 
+  963  cd CandidateServices/
+  964  sudo docker build -t pc1204a\candidate-service:v01 .
+  965  cd ..
+  966  gedit docker-compose.yml 
+  967  sudo docker images
+  968  sudo docker rmi pc1204acandidate-service
+  969  sudo docker rmi pc1204acandidate-service:v01
+  970  cd CandidateServices/
+  971  sudo docker build -t pc1204a/candidate-service:v01 .
+  972  cd ..
+  973  sudo docker images
+  974  sudo docker-compose up -d
+  975  sudo docker logs candidate-service-v01
+  976  sudo docker ps
+  977  sudo docker ps -a
+  978  sudo docker logs configurations-server-v01
+  979  sudo docker ps -a
+  980  sudo docker logs 
+  981  gedit docker-compose.yml 
+  982  gedit stop-containers.sh 
+  983  sudo docker stop eureka-service-registry-v01
+  984  sudo docker stop configurations-server-v01
+  985  sudo docker stop candidate-service-v01
+  986  sudo docker rm candidate-service-v01
+  987  sudo docker rm configurations-server-v01
+  988  sudo docker rm eureka-service-registry-v01
+  989  sudo docker ps -a
+  990  sudo docker images
+  991  sudo docker rmi pc1204a/configurations-server 
+  992  sudo docker rmi fc7d009a8efb
+  993  sudo docker rmi 3685383f7b21
+  994  sudo docker images
+  995  cd configurations-server/
+  996  sudo docker build -t pc1204a/configurations-server:v01 .
+  997  sudo docker images
+  998  sudo docker-compose up -d
+  999  gedit docker-compose.yml 
+ 1000  sudo docker-compose up -d
+ 1001  sudo docker inspect configurations-server
+ 1002  sudo docker ps
+ 1003  sudo docker logs candidate-service-v01
+ 1004  sudo docker start container candidate-service-v01
+ 1005  sudo docker start container candidate-service
+ 1006  sudo docker logs container candidate-service
+ 1007  sudo docker ps -a
+ 1008  gedit docker-compose.yml 
+ 1009  gedit stop-containers.sh 
+ 1010  sudo docker stop eureka-service-registry-v01
+ 1011  sudo docker stop configurations-server-v01
+ 1012  sudo docker stop candidate-service-v01
+ 1013  sudo docker rm candidate-service-v01
+ 1014  sudo docker rm configurations-server-v01
+ 1015  sudo docker rm eureka-service-registry-v01
+ 1016  sudo docker-compose up -d
+ 1017  sudo docker logs container candidate-service
+ 1018  sudo docker logs candidate-service
+ 1019  ifconfig
+ 1020  sudo docker ps
+ 1021  sudo docker exec -it 2e802a45e468 ping 172.17.0.1
+ 1022  sudo docker exec -it 2e802a45e468 ping 10.0.2.15
+ 1023  mysql -h10.0.2.15 -uroot
+ 1024  mysql -h172.17.0.1 -uroot
+ 1025  mysql -h192.168.56.103 -uroot
+ 1026  sudo docker exec -it 2e802a45e468 ping localhost
+ 1027  gedit docker-compose.yml 
+ 1028  sudo docker-compose up -d
+ 1029  gedit docker-compose.yml 
+ 1030  sudo docker-compose up -d
+ 1031  gedit docker-compose.yml 
+ 1032  sudo docker-compose up -d
+ 1033  gedit docker-compose.yml 
+ 1034  sudo docker-compose up -d
+ 1035  gedit docker-compose.yml 
+ 1036  sudo docker-compose up -d
+ 1037  gedit docker-compose.yml 
+ 1038  sudo docker-compose up -d
+ 1039  gedit docker-compose.yml 
+ 1040  sudo docker-compose up -d
+ 1041  gedit docker-compose.yml 
+ 1042  sudo docker-compose up -d
+ 1043  sudo docker ps
+ 1044  sudo dcker stop spring-boot-microservices-eureka-swagger_mysqldb_1
+ 1045  sudo docker stop spring-boot-microservices-eureka-swagger_mysqldb_1
+ 1046  sudo docker rm spring-boot-microservices-eureka-swagger_mysqldb_1
+ 1047  sudo docker ps
+ 1048  sudo docker ps -a
+ 1049  sudo docker-compose up -d
+ 1050  gedit docker-compose.yml 
+ 1051  sudo docker-compose up -d
+ 1052  sudo docker exec -it b4a82d8e99c0 bash
+ 1053  sudo docker inspect b4a82d8e99c0
+ 1054  mysql -h172.19.0.2 -uroot
+ 1055  sudo docker exec -it b4a82d8e99c0 bash
+ 1056  sudo docker ps
+ 1057  sudo docker exec -it 98f380fc8904 bash
+ 1058  gedit docker-compose.yml 
+ 1059  sudo docker-compose up -d
+ 1060  gedit docker-compose.yml 
+ 1061  sudo docker-compose up -d
+ 1062  sudo docker ps
+ 1063  sudo docker exec -it f51d0cff582d bash
+ 1064  gedit docker-compose.yml 
+ 1065  sudo docker-compose up -d
+ 1066  gedit docker-compose.yml 
+ 1067  sudo docker-compose up -d
+ 1068  gedit docker-compose.yml 
+ 1069  sudo docker-compose up -d
+ 1070  gedit docker-compose.yml 
+ 1071  sudo docker-compose up -d
+ 1072  service mysql stop 
+ 1073  sudo apt-get remove mysql*
+ 1074  service mysql start
+ 1075  mysql -uroot -pARvind@1981
+ 1076  sudo apt-get remove mysql-server
+ 1077  mysql -uroot -pARvind@1981
+ 1078  gedit docker-compose.yml 
+ 1079  mysql -uroot -pARvind@1981
+ 1080  sudo docker-compose up -d
+ 1081  gedit docker-compose.yml 
+ 1082  sudo docker-compose up -d
+ 1083  sudo docker inspect -itr candidate-service
+ 1084  sudo docker inspect -it candidate-service
+ 1085  sudo docker inspect  candidate-service
+ 1086  sudo docker logs  candidate-service
+ 1087  sudo dockerps
+ 1088  sudo docker ps
+ 1089  sudo docker inspect 865e0210612f
+ 1090  sudo docker ps
+ 1091  sudo docker inspect 29377dc34b1f
+ 1092  sudo docker logs 29377dc34b1f
+ 1093  gedit docker-compose.yml 
+ 1094  sudo docker-compose up -d
+ 1095  sudo docker logs 29377dc34b1f
+ 1096  sudo docker ps
+ 1097  sudo docker logs a006ab81bbda
+ 1098  sudo docker inspect a006ab81bbda
+ 1099  sudo docker ps
+ 1100  sudo docker inspect configurations-server
+ 1101  sudo docker inspect a006ab81bbda
+ 1102  gedit docker-compose.yml 
+ 1103  sudo docker-compose up -d
+ 1104  sudo docker ps
+ 1105  sudo docker inspect 91e1d13703d9
+ 1106  sudo docker ps
+ 1107  sudo docker exec -it 91e1d13703d9 bash
+ 1108  mysql
+ 1109  mysql -h172.21.0.4 -uroot -pmysql 
+ 1110  mysql -h172.21.0.4 -uroot -pmysql < CandidateServices/src/main/resources/data.sql 
+ 1111  mysql -h172.21.0.4 -uroot -pmysql candidadte < CandidateServices/src/main/resources/data.sql 
+ 1112  mysql -h172.21.0.4 -uroot -pmysql candidate < CandidateServices/src/main/resources/data.sql 
+ 1113  mysql -h172.21.0.4 -uroot -pmysql 
+ 1114  gedit stop-containers.sh 
+ 1115  sudo docker stop eureka-service-registry
+ 1116  sudo docker stop configurations-server
+ 1117  sudo docker stop candidate-service
+ 1118  sudo docker stop mysqldb
+ 1119  sudo docker rm candidate-service
+ 1120  sudo docker rm configurations-server
+ 1121  sudo docker rm eureka-service-registry
+ 1122  sudo docker rm mysqldb
+ 1123  sudo docker ps -a
+ 1124  sudo docker-compose up -d
+ 1125  sudo docker logs candidate-service
+ 1126  sudo docker exec -it candidate-service bash
+ 1127  sudo docker ps
+ 1128  sudo docker inspect 40a7cdc8a9d2
+ 1129  sudo docker-compose up -d
+ 1130  gedit stop-containers.sh 
+ 1131  sudo docker-compose up -d
+ 1132  gedit docker-compose.yml 
+ 1133  cd CandidateServices/
+ 1134  ll
+ 1135  gedit src/main/resources/bootstrap.yml 
+ 1136  cd ..
+ 1137  mvn clean install 
+ 1138  sudo docker images
+ 1139  cd CandidateServices/
+ 1140  sudo docker build -t pc1204a/candidate-service:v01 .
+ 1141  cd ..
+ 1142  gedit stop-containers.sh 
+ 1143  sudo docker stop eureka-service-registry
+ 1144  sudo docker stop configurations-server
+ 1145  sudo docker stop candidate-service
+ 1146  sudo docker stop mysqldb
+ 1147  sudo docker rm candidate-service
+ 1148  sudo docker rm configurations-server
+ 1149  sudo docker rm eureka-service-registry
+ 1150  sudo docker rm mysqldb
+ 1151  sudo docker ps -a
+ 1152  sudo docker-compose up -d
+ 1153  sudo docker logs candidate-service
+ 1154  sudo docker ps
+ 1155  sudo docker exec -it fd789a929f6b hostname
+ 1156  sudo docker exec -it configurations-server hostname
+ 1157  gedit docker-compose.yml 
+ 1158  sudo docker-compose up -d
+ 1159  sudo docker exec -it configurations-server hostname
+ 1160  gedit docker-compose.yml 
+ 1161  sudo docker-compose up -d
+ 1162  sudo docker logs candidate-service
+ 1163  sudo docker ps
+ 1164  sudo docker logs candidate-service
+ 1165  sudo docker exec -it mysqldb bash
+ 1166  mysql -hmysqldb -uroot -pmysql candidate < CandidateServices/src/main/resources/data.sql 
+ 1167  mysql -h172.21.0.4 -uroot -pmysql candidate < CandidateServices/src/main/resources/data.sql 
+ 1168  mysql -h172.21.0.4 -uroot -pmysql candidate < CandidateServices/src/main/resources/data.sql
+ 1169  sudo docker inspect mysqldb
+ 1170  mysql -h172.21.0.2 -uroot -pmysql candidate < CandidateServices/src/main/resources/data.sql
+ 1171  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1172  sudo docker-compose up -d
+ 1173  gedit docker-compose.yml 
+ 1174  sudo docker-compose up -d
+ 1175  sudo docker ps
+ 1176  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1177  gedit docker-compose.yml 
+ 1178  sudo docker-compose up -d
+ 1179  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1180  mysql -h172.21.0.3 -uroot -pmysql candidate 
+ 1181  mysql -h172.21.0.4 -uroot -pmysql candidate 
+ 1182  sudo docker inspect mysqldb
+ 1183  gedit docker-compose.yml 
+ 1184  sudo docker-compose up -d
+ 1185  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1186  sudo docker exec -it mysqldb bash
+ 1187  sudo docker-compose up -d
+ 1188  gedit docker-compose.yml 
+ 1189  sudo docker-compose up -d
+ 1190  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1191  sudo docker logs mysqldb
+ 1192  sudo docker inspect mysqldb
+ 1193  ping mysqldb
+ 1194  gedit docker-compose.yml 
+ 1195  sudo docker-compose up -d
+ 1196  mysql -h172.21.0.2 -uroot -pmysql candidate 
+ 1197  gedit docker-compose.yml 
+ 1198  sudo docker-compose up -d
+ 1199  sudo docker ps
+ 1200  sudo docker logs candidate-service
+ 1201  cd ..
+ 1202  gedit docker-compose.yml 
+ 1203  mysql -uroot -pARvind@1981
+ 1204  gedit docker-compose.yml 
+ 1205  service mysql stop 
+ 1206  cd /
+ 1207  find -name candidate.sql
+ 1208  sudo find -name candidate.sql
+ 1209  su
+ 1210  cd ~/Desktop/
+ 1211  ll
+ 1212  su
+ 1213  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1214  ll
+ 1215  gedit docker-compose.yml 
+ 1216  sudo docker-compose up -d
+ 1217  mysql -uroot -p
+ 1218  sudo server mysql stop 
+ 1219  sudo service mysql stop 
+ 1220  sudo docker-compose up -d
+ 1221  sudo docker ps
+ 1222  sudo docker-compose up -d
+ 1223  gedit docker-compose.yml 
+ 1224  sudo docker-compose up -d
+ 1225  sudo docker-compose up -d --scale candidate-service=3
+ 1226  sudo docker ps
+ 1227  gedit stop-containers.sh 
+ 1228  sudo docker stop eureka-service-registry
+ 1229  sudo docker stop configurations-server
+ 1230  sudo docker stop candidate-service
+ 1231  sudo docker stop mysqldb
+ 1232  sudo docker rm configurations-server
+ 1233  sudo docker rm eureka-service-registry
+ 1234  sudo docker rm mysqldb
+ 1235  sudo docker ps -a
+ 1236  sudo docker-compose up -d --scale candidate-service=3
+ 1237  sudo docker rm aafd8eebe5fb66005a0c85e62e26e8aeb2b402bc3198b406bafb5ee65c1e3dee 
+ 1238  sudo docker stop aafd8eebe5fb66005a0c85e62e26e8aeb2b402bc3198b406bafb5ee65c1e3dee 
+ 1239  sudo docker rm aafd8eebe5fb66005a0c85e62e26e8aeb2b402bc3198b406bafb5ee65c1e3dee 
+ 1240  sudo docker-compose up -d --scale candidate-service=3
+ 1241  reboot
+ 1242  sudo docker ps -a
+ 1243  sudo docker ps 
+ 1244  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1245  sudo docker-compose up -d --scale candidate-service=3
+ 1246  sudo service mysql stop 
+ 1247  sudo docker-compose up -d --scale candidate-service=3
+ 1248  gedit docker-compose.yml 
+ 1249  sudo docker ps 
+ 1250  sudo docker-compose up -d --scale candidate-service=3
+ 1251  sudo docker ps 
+ 1252  sudo docker inspect spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1253  gedit docker-compose.yml 
+ 1254  reboot
+ 1255  ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1256  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1257  sudo service mysql stop 
+ 1258  sudo docker-compose up -d --scale candidate-service=3
+ 1259  sudo docker ps 
+ 1260  reboot
+ 1261  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1262  gedit stop-containers.sh 
+ 1263  gedit docker-compose.yml 
+ 1264  sudo service mysql stop 
+ 1265  sudo docker-compose up -d --scale candidate-service=3
+ 1266  gedit docker-compose.yml 
+ 1267  sudo docker-compose up -d --scale candidate-service=3
+ 1268  reboot
+ 1269  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1270  su
+ 1271  sudo service mysql stop 
+ 1272  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1273  sudo docker-compose up -d
+ 1274  sudo docker stop spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1275  sudo docker rm spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1276  gedit docker-compose.yml 
+ 1277  sudo docker-compose up -d
+ 1278  sudo docker ps 
+ 1279  sudo docker logs candidate-service
+ 1280  sudo docker logs candidate-service --scale=2
+ 1281  sudo docker logs candidate-service --scale=2 candidate-service
+ 1282  sudo docker-compose up -d --scale=2 candidate-service
+ 1283  sudo docker-compose up -d --scale candidate-service=2
+ 1284  sudo docker ps 
+ 1285  sudo docker stop candidate-service
+ 1286  sudo docker rm candidate-service
+ 1287  sudo docker-compose up -d --scale candidate-service=2
+ 1288  gedit docker-compose.yml 
+ 1289  sudo docker-compose up -d --scale candidate-service=2
+ 1290  gedit docker-compose.yml 
+ 1291  sudo docker-compose up -d --scale candidate-service=2
+ 1292  reboot
+ 1293  sudo service mysql stop 
+ 1294  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1295  sudo docker-compose up -d --scale candidate-service=2
+ 1296  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1297  sudo docker inspect spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1298  sudo docker ps 
+ 1299  sudo docker-compose up -d --scale candidate-service=2
+ 1300  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1301  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_3
+ 1302  cd CandidateServices/
+ 1303  cd ..
+ 1304  cd models/
+ 1305  gedit src/main/java/com/rd/arv/candidate/entity/Candidate.java 
+ 1306  cd ../../../../../
+ 1307  pwd
+ 1308  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1309  mvn clean install 
+ 1310  cd CandidateServices/
+ 1311  sudo docker images
+ 1312  sudo docker build -t pc1204a/candidate-service .
+ 1313  cd..
+ 1314  cd ..
+ 1315  gedit stop-containers.sh 
+ 1316  sudo docker stop eureka-service-registry
+ 1317  sudo docker stop configurations-server
+ 1318  sudo docker stop candidate-service
+ 1319  sudo docker stop mysqldb
+ 1320  sudo docker rm candidate-service
+ 1321  sudo docker rm configurations-server
+ 1322  sudo docker rm eureka-service-registry
+ 1323  sudo docker rm mysqldb
+ 1324  sudo docker ps -a
+ 1325  sudo docker stop spring-boot-microservices-eureka-swagger_candidate-service_3
+ 1326  sudo docker rm spring-boot-microservices-eureka-swagger_candidate-service_3
+ 1327  sudo docker stop spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1328  sudo docker rm spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1329  sudo docker-compose up -d 
+ 1330  sudo docker-compose up -d --scale candidate-service=2
+ 1331  reboot
+ 1332  sudo service mysql stop
+ 1333  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1334  sudo docker-compose up -d --scale candidate-service=2
+ 1335  gedit docker-compose.yml 
+ 1336  sudo docker-compose up -d --scale candidate-service=2
+ 1337  gedit docker-compose.yml 
+ 1338  sudo docker-compose up -d --scale candidate-service=2
+ 1339  gedit docker-compose.yml 
+ 1340  sudo docker-compose up -d --scale candidate-service=2
+ 1341  reboot
+ 1342  gedit docker-compose.yml 
+ 1343  gedit stop-containers.sh 
+ 1344  sudo service mysql stop 
+ 1345  cd workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1346  sudo docker-compose up -d --scale candidate-service=2
+ 1347  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_1
+ 1348  gedit docker-compose.yml 
+ 1349  sudo docker-compose up -d --scale candidate-service=2
+ 1350  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_1
+ 1351  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1352  sudo docker ps
+ 1353  gedit docker-compose.yml 
+ 1354  sudo docker-compose up -d --scale candidate-service=2
+ 1355  gedit docker-compose.yml 
+ 1356  sudo docker-compose up -d --scale candidate-service=2
+ 1357  gedit docker-compose.yml 
+ 1358  sudo docker-compose up -d --scale candidate-service=2
+ 1359  sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_2
+ 1360  gedit docker-compose.yml 
+ 1361  reboot
+ 1362  sudo apt-get remove --purge mysql*
+ 1363  df
+ 1364  reboot
+ 1365  sudo ~
+ 1366  sudo
+ 1367  cd ~/jenkins/
+ 1368  ll
+ 1369  ll -h
+ 1370  ls
+ 1371  ll
+ 1372  cd /var/jenkins_hom
+ 1373  cd /var/jenkins_home
+ 1374  sudo docker exec -itr jenkins
+ 1375  sudo docker exec -it jenkins
+ 1376  sudo docker exec -it jenkins bash
+ 1377  exit
+ 1378  mysql
+ 1379  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1380  ll
+ 1381  touch docker-compose-infra.yml
+ 1382  ll
+ 1383  gedit docker-compose.yml 
+ 1384  cp docker-compose.yml docker-compose-old.yml
+ 1385  ll
+ 1386  gedit docker-compose-infra.yml 
+ 1387  sudo mkdir ~/jenkins
+ 1388  gedit docker-compose-infra.yml 
+ 1389  sud docker-compose up -d docker-compose-infra.yml 
+ 1390  sud0 docker-compose up -d docker-compose-infra.yml 
+ 1391  sudo docker-compose up -d docker-compose-infra.yml 
+ 1392  sudo docker-compose up -d -f docker-compose-infra.yml
+ 1393  sudo docker-compose -f docker-compose-infra.yml
+ 1394  sudo docker-compose -f docker-compose-infra.yml up
+ 1395  gedit docker-compose-infra.yml 
+ 1396  sudo docker-compose -f docker-compose-infra.yml up
+ 1397  gedit docker-compose-infra.yml 
+ 1398  sudo docker-compose -f docker-compose-infra.yml up
+ 1399  docker logi
+ 1400  docker login
+ 1401  sudo docker login
+ 1402  sudo docker-compose -f docker-compose-infra.yml up
+ 1403  gedit docker-compose-infra.yml 
+ 1404  sudo docker-compose -f docker-compose-infra.yml up
+ 1405  sudo docker ps -a 
+ 1406  sudo docker-compose -f docker-compose-infra.yml up
+ 1407  gedit docker-compose-infra.yml 
+ 1408  sudo docker-compose -f docker-compose-infra.yml up
+ 1409  sudo docker-compose -f docker-compose-infra.yml up -d
+ 1410  sudo docker ps
+ 1411  docker stop jenkins
+ 1412  sudo docker stop jenkins
+ 1413  sudo docker stop eureka-service-registry
+ 1414  sudo docker stop configurations-server
+ 1415  sudo docker stop mysqldb
+ 1416  sudo docker-compose -f docker-compose-infra.yml up
+ 1417  exit
+ 1418  cd ~/workspace_microservices/Spring-boot-microservices-Eureka-Swagger/Spring-boot-microservices-Eureka-Swagger/
+ 1419  ll
+ 1420  gedit docker-compose-infra.yml 
+ 1421  gedit docker-compose.yml 
+ 1422  history
+ 1423  sudo docker-compose -f docker-compose-infra.yml up -d
+ 1424  history
+ 1425  sudo docker-compose up -d --scale candidate-service=2
+ 1426  sudo docker-compose -f docker-compose-infra.yml up -d --scale candidate-service=2
+ 1427  sudo docker ps -a
+ 1428  clear
+ 1429  sudo docker ps -a
+ 1430  sudo docker-compose -f docker-compose-infra.yml up -d --scale candidate-service=2
+ 1431  sudo docker ps -a
+ 1432  sudo docker logs b2e3e8bacf0d
+ 1433  reboot
+ 1434  cd ~
+ 1435  ll
+ 1436  cd workspace_microservices/
+ 1437  ll
+ 1438  cd ..
+ 1439  zip -R workspace.zip workspace
+ 1440  cd ~
+ 1441  ll
+ 1442  zip -R workspace_microservices.zip workspace_microservices/
+ 1443  history 
+ 1444  history > history.txt

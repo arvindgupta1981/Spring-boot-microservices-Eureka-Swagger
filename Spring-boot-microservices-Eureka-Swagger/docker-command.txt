@@ -1,0 +1,25 @@
+Build an image from Dockerfile:- 
+sudo docke build -t pc1204a/api-gateway:v01 .
+
+Run docker compose file:-
+sudo docker-compose -f docker-compose-infra.yml up -d
+sudo docker-compose -f docker-compose-infra.yml up -d --scale candidate-service=2 --scale api-gateway=3
+
+list all running containers:-
+sudo docker ps
+
+list all running and not running containers:-
+sudo docker ps -a
+
+Scale services:-
+sudo docker-compose -f docker-compose-infra.yml scale api-gateway=3 candidate-service=2
+sudo docker-compose -f docker-compose-infra.yml up -d --scale candidate-service=2 --scale api-gateway=3
+
+Check logs:- 
+sudo docker logs spring-boot-microservices-eureka-swagger_candidate-service_2
+
+Execute bash:-
+sudo docker exec -it <conatiner id> bash
+
+Docker CPU & Memory Uses check
+sudo docker stats

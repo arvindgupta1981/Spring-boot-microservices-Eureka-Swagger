@@ -1,0 +1,21 @@
+#https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
+server:
+  port: 8090
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, env, configprops
+  metrics:
+    export:
+      atlas:
+        enabled: false
+eureka:
+ instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://eureka-service-registry:8761/eureka

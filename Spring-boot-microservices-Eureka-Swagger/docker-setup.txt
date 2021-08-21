@@ -1,0 +1,9 @@
+sudo apt-get install openjdk-11-jdk
+sudo apt install maven
+sudo snap install --classic eclipse
+sudo apt install git
+sudo apt-get install docker
+sudo apt install docker-compose
+
+
+git clone -b <branch name> repo-url
