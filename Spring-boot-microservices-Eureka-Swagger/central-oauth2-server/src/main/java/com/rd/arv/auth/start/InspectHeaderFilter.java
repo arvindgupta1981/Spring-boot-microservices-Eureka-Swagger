@@ -1,6 +1,7 @@
 package com.rd.arv.auth.start;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -21,7 +22,12 @@ public class InspectHeaderFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         System.out.println("++++++++++++++++++++++++=I AM HITTING THE AUTH SERVER: " + httpServletRequest.getHeader("Authorization"));
-
+        Enumeration<String> enu = httpServletRequest.getHeaderNames();
+        while(enu.hasMoreElements()) {
+        	String header = enu.nextElement();
+        	System.out.println(header + "++++++++++++++++++++++++=I AM HITTING THE AUTH SERVER: Header " + httpServletRequest.getHeader(header));
+        	
+        }
         filterChain.doFilter(httpServletRequest, servletResponse);
     }
 
