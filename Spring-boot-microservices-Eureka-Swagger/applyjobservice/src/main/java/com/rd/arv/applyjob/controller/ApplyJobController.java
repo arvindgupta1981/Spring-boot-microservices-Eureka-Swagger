@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rd.arv.applyjob.clients.CandidateClient;
-import com.rd.arv.applyjob.starter.ApplyJobApplication;
+import com.rd.arv.candidate.entity.Candidate;
 
 @RestController
 @RequestMapping(path = "/applyjob")
@@ -20,9 +20,9 @@ public class ApplyJobController {
 	private CandidateClient candidateClient; 
 	
 	@GetMapping(value = "/apply/{id}")
-	public void applyJob(@PathVariable("id") Long candidateId) {
+	public Candidate applyJob(@PathVariable("id") Long candidateId) {
 		LOGGER.info("Apply job id:{}", candidateId);
 		LOGGER.info("Apply Job Name:{} ", candidateClient.find(candidateId).getName());
-		
+		return candidateClient.find(candidateId);
 	}
 }

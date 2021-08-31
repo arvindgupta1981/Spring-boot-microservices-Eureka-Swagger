@@ -15,6 +15,7 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
               
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     candidate:
       path: /candidate/**

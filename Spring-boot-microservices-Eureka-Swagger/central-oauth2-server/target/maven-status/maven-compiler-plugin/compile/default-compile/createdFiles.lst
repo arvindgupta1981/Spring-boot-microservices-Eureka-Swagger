@@ -1,8 +1,0 @@
-com/rd/arv/auth/start/WebSecurityConfigurer.class
-com/rd/arv/auth/start/UserContextInterceptor.class
-com/rd/arv/auth/start/ResourceServerConfiguration.class
-com/rd/arv/auth/start/InspectHeaderFilter.class
-com/rd/arv/auth/start/OAuth2Config.class
-com/rd/arv/auth/start/UserContextHolder.class
-com/rd/arv/auth/start/UserContext.class
-com/rd/arv/auth/start/CentralAuthorizationServerApplication.class

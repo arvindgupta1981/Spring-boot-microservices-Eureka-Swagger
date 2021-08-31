@@ -1,9 +1,0 @@
-spring:
-   application:
-      name: authorizationserver
-   profiles:
-      active: dev
-   cloud:
-      config:
-         uri: http://configurations-server:8282
-         enabled: true

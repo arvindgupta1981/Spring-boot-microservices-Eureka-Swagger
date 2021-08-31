@@ -1,5 +1,5 @@
 version: '3'
-# create network by running sudo docker create network --driver bridge frontendnetwork
+#create network by running sudo docker network create --driver bridge frontendnetwork----
 # default link in the same network all containers with service name
 #sudo docker exec -it configurations-server-v01 ping eureka-service-registry-v01
 networks:

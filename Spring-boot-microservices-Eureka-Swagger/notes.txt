@@ -14,7 +14,7 @@ Feign - cloud Routing
 Client -> Proxy-zuul -> Eureka Service -> call the actual service
 
 Kubernetes - meaning pilot
-Manage containers as cluster of contianers
+Manage containers as cluster of contianers like docker compose
 Expose conainer as DNS or Ip address
 Load balancing of incoming request
 Automatic creates new conainers or removed conainers
@@ -40,7 +40,7 @@ Benefits of Spring Security
 ------------------
 handle automatically Session Fixation
 handle automatically Clickjacking
-handle automatically click site request forgery	
+handle automatically click site request forgery
 
 What Spring Security can do
 --------------------------
@@ -53,7 +53,7 @@ Method level security
 
 Spring Security Concepts
 -----------------------
-Authentication - Who are you - id - username/password, key, token etc. Multi factor authentication password + phone text etc 
+Authentication - Who are you - id - username/password, key, token etc. Multi factor authentication password + phone text etc
 Authorization - you are authorize to access the resource
 Principal - Currently logged in user, Authenticated user, you don't need to login for each page in web app. prinicipal stored into session
 Permissions/Granted Authority - Read/write etc. on a resource for a user
@@ -76,7 +76,7 @@ How can set username and password in Spring Security
 spring.security.user.name
 spring.security.user.password
 
-3) Customize which url requried access, authentication from database, exytends WebSecurityConfigurerAdapter 
+3) Customize which url requried access, authentication from database, exytends WebSecurityConfigurerAdapter
 Override authicate method of AuthenticationManager class, require username, password and role to authenticate
 use authenticationmanagerbuilder to build authentication
 configure method (httpsecurity) hold authenticationmanager - (Configure Authorization) allow to customize authenticationmanagerbuilder, set urls public/private, role based access etc
@@ -90,11 +90,11 @@ override getPasswordencoder to set password encoder - Nopasswordencoder.getInsta
 logout - by calling http://localhost:8080/logout
 
 What is Oauth - for Authorization between services not authentication not for user authrztn,
-like - Print service wants to access google drive, google drives call to user to allow access, 
-Google Drive issue a token (contains authorization Role for access only G Drive) to print service 
+like - Print service wants to access google drive, google drives call to user to allow access,
+Google Drive issue a token (contains authorization Role for access only G Drive) to print service
 Google Drive - Resource or Resource Server (Add a Authorization layer to issue less authorize token)
 user - Resource Owner
-Print Service - client 
+Print Service - client
 
 OAUTH Flow
 -----------
@@ -104,10 +104,10 @@ G Drive Auth server connect to user and get permissions about print service from
 G Drive Auth server issue a token to print service and ask what do you want to access (can be ignore)
 Print service return the token to Auth server and information about the resource (can be ignore)
 G Drive Auth server issue another token with information of access of resource to Print Service
-Print Service connect to G Drive with token 
+Print Service connect to G Drive with token
 G Drive validate the token and return the resource to print service
 
-We can ignore two steps where we need a short lived tokens required. 
+We can ignore two steps where we need a short lived tokens required.
 
 Microservice flow - only use for trusted clients
 -------------------
@@ -116,7 +116,7 @@ Auth server issue the token with authorization to Microservice A
 Microservice A connect with Microservice B with Token
 Microservice B validate Token and grant access
 
-Springboot OAUTH2 
+Springboot OAUTH2
 https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html5/
 
  
@@ -124,8 +124,218 @@ https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html5/
 Pending list
 --------------
 1- Ribbon configuration setup
-2- sql db properties correction 
+2- sql db properties correction
 3- OAuth2
 4- Test Junit & BDD Gharkins
 5- Maven Profiling
 6- Docker
+
+Docker Command:-
+------------------
+sudo apt-get install docker
+docker -v
+Install open JDK11, eclipse, mvn, Git, mysql on ubantu
+sudo apt install mysql
+sudo apt install git
+Clone Git repo  git clone https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git
+Pull request- git pull or git pull https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger/tree/master/Spring-boot-microservices-Eureka-Swagger.git
+cd Spring-boot-microservices-Eureka-Swagger/
+mvn eclipse:clean eclipse:eclipse
+cd any project like cd CandidateServices/
+mvn clean install for all projects or candidate service
+Create image - Run where Dockerfile exist - su docker build -t candidadateservice-docker:v0.1 .
+sudo docker images - list all created images
+cd configurations-server/
+mvn clean install
+sudo docker build -t configuration-server:v0.1 .
+sudo docker images
+sudo docker run <image id>
+Remove a container
+stop conainer by ctrl +c  or docker stop <container id>
+sudo docker container rm <conatiner id> or docker rm <container id>
+--f option to rm running container
+
+sudo docker image rm <image id> or docker rmi <image id>
+--f option for without removing container
+Run eclipse - type eclipse
+
+docket ps - show all running container
+-a option for all continers
+run mysql - mysql -uroot -pmysql
+sudo docker logs 9a4fe3f18d99
+service mysqld start|stop|restart
+logs -sudo docker logs <container_id>
+sudo docker inspect <container id>
+open a port - sudo docker run -p 8282:8282 <container id>
+Mysql container build - sudo docker build -t mysql:5.7  
+Docker push image into repo -
+docker login
+docker tag img_name:tag pc1204a/img_name:tag
+docker push pc1204a/img_name:tag
+docker ls image
+setup eth0 is required to communicate ip outside container
+Docker repo - https://hub.docker.com/ - pc1204a / arvind1981
+Validat YML - Online tools like codebeauty
+Containers settings configurations- docker inspect <container id> -e
+docker logs <container Name>
+Docker Compose- create update delete containers- script that can change anything in running env
+like add a monitor, pull logs any activity can be done in running env., build images, pull configurations etc.
+
+Create docker-compose.yml file committed into project
+install docker-compose - sudo apt install docker-compose
+run sudo docker-compose up -d
+chk sudo docker ps
+run cmd commands
+sudo docker exec it <container name> ping|cat etc
+
+sudo docker exec -it <container id> bash
+
+
+Mysql -
+
+Access denied error
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ARvind@1981';
+
+Change root password
+sudo mysql_security_installation
+
+Jenkins
+---
+Create directory
+mkdir ~/jenkins
+localhost:8989
+For IntialAdminPassword:-
+sudo docker exec -it jenkins bash
+cd /var/jenkins_home/secrets
+cat initialAdminPassword
+login with intial admin password
+install recommended plugins
+Manage Jenkins-> create users
+user: root pass: arvind1981
+Manage Jenkins- manage plugins
+Install plugin java8 and maven - oracle user- arvind.mannindia@gmail.com, ARvind@1981
+Create item - Maven build - Git Project URL- Git Repo Url - Branch Docker - Root pom - Spring-boot-microservices-Eureka-Swagger/pom.xml - save
+
+Docker - Plugin install - Docker Pipeline, docker-build-step, cloudbees Build & Publish
+
+Pipeline
+-------
+is a workflow - group of events and jobs chained togeather in a sequence. jobs are dependent on one or more other jobs 
+Install docker pipeline plugin
+add docker crendetails in manage credentials - manage jenkins
+add jdk and maven in global tool - manage jenkins
+sudo usermod -a -G root jenkins
+sudo usermod -a -G docker jenkins
+service jenkins restart 
+
+
+Network port fporwarding between host machine and Ubantu:-
+Oracle VM - > Setting --> Network -> Port Forwarding ->
+Host IP -> 192.168.1.14 port: 9231, guest IP - 192.168.56.103 port:8181
+
+
+Top Git commands- https://dzone.com/articles/top-20-git-commands-with-examples
+192.168.56.103:8181/candidate/find/1
+
+
+
+Trace ID & Zipkin- trace requests with all parameters
+--------------------------------------------------------
+WE NEED A DEPENDENCY SLEUTH & zipkin IN THE PATH ONLY
+spring-cloud-starter-slueth
+<dependency> 
+  <groupId>org.springframework.cloud</groupId> 
+  <artifactId>spring-cloud-sleuth-zipkin</artifactId> 
+</dependency> 
+
+Spring seluth= Service Name + unique ID + span id + export flag(export to zipkin or not)
+Unqique id = same for one request
+span id- unique for each service
+zipkin.io
+docker-compose create container for zipkin image like mysql
+default 9411
+register microservice with zipkin server
+Add two dependency
+spring-cloud-starter-sleuth
+spring-cloud-start-zipkin
+Add property
+Spring.zipkin.baseurl=localhost:9411
+Control property - spring.zipkin.enabled=false
+could be export data controlled from property file
+
+Papertrail - aggregrate logs from docker
+connect docker with plugin
+support docker logs command
+
+ELK- open source - docker images available with docker compose - https://github.com/deviantony/docker-elk
+E- Elastic Search no sql database
+L- logstash - aggreegrate logs
+K - Kibana UI
+https://logz.io/blog/docker-logging/
+Before installing, make sure that the following ports are free: 5601 (for Kibana), 9200 (for Elasticsearch), and 5044 (for Logstash).
+
+
+
+HYSTRIX
+------------------------------------
+https://www.javatpoint.com/microservices-monitoring-and-virtualization-tool
+
+Hystrix- why reduce resouce consumption for failure condition like for slowness and faulted service
+-----
+dependency - spring-cloud-starter-netflix-hystrix
+@enablecircuitbreaker - App levele annot - springbiitapp
+method leve annot -  method can time out- call break and redo
+configure hystrix behavior
+
+fallback mechnism
+
+create fallbackmethod - won't do actual work return a dummy response
+
+fallback fault tolerance
+----
+Detect something wrong in all current and downstream calls
+take temporary down to sent calls
+deactivate the problem component
+Reset to resume normal service
+
+
+Why
+---
+Failing Fast - identify the probleam as early as possible and fail
+failback functionality
+Automatic recovery
+
+Hystrix command parameters
+
+fallback execute when circuit break - response to next calls
+
+3 ways to return response in fallback method
+Respond error
+respond a default response
+respond a cached response
+
+Hystrix Dashboard
+------
+List all circuit breaker
+List all blocked cri
+number of requests
+use hystric in most of the calls -
+private method hystric will not cover by default - refactor move private methods create a class, autowire the class
+
+add hystric dashboard dependency with actuator
+add annot @enablehystricdashboard
+add a property
+url: <your app:port>/hystrix/monitor
+
+Bulkhead Pattern
+---------
+coming from ship building
+defined thread pool for each microservice
+defined hystrick threadpool - property coreSize - max concurrent thread, maxqueuesize = max thread wait in the queue
+
+3 ways to handle outage
+--------------
+adding new instances
+Circuit breaker
+bulkhead pattern

@@ -5,8 +5,8 @@ spring:
       active: dev
    cloud:
       config:
-         uri: http://localhost:8282
+         uri: http://configurations-server:8282
 eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+   client:
+      service-url:
+         defaultZone: http://eureka-service-registry:8761/eureka/

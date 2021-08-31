@@ -1,5 +1,5 @@
 version: '3'
-# create network by running sudo docker create network --driver bridge frontendnetwork
+# create network by running sudo docker network create --driver bridge frontendnetwork
 # default link in the same network all containers with service name
 #sudo docker exec -it configurations-server-v01 ping eureka-service-registry-v01
 networks:
@@ -7,7 +7,7 @@ networks:
   external: true
 services:
  eureka-service-registry:
-  image: 'pc1204a/netflix-eureka-server:v0.1'
+  image: 'pc1204a/netflix-eureka-server:v01'
   container_name: eureka-service-registry
   hostname: eureka-service-registry
   links:
@@ -56,24 +56,24 @@ services:
    volumes: ~/mysqlcandidate/candidate.sql:/candidate.sql
   networks:
    frontendnetwork:
- jenkins:
-  image: 'jenkins/jenkins:latest'
-  privileged: true
-  user: root
-  #posrts- host:container
-  ports:
-   - 8989:8080
-   - 50000:50000
-  container_name: jenkins
-  #create volume dir sudo mkdir ~/jenkins
-  volumes:
-  #mkdir ~/jenkinsvoldir
-  #chmod -R +777 ~/jenkinsvoldir
-   - ~/jenkinsvoldir:/var/jenkins_home
-   - /var/run/docker.sock:/var/run/docker.sock
-   - /usr/local/bin/docker:/usr/local/bin/docker
-  environment:
-   - JAVA_OPTS=-Dhudson.model.DownloadService.noSignatureCheck=true
+ #jenkins:
+  #image: 'jenkins/jenkins:latest'
+  #privileged: true
+  #user: root
+  ##posrts- host:container
+  #ports:
+   #- 8989:8080
+   #- 50000:50000
+  #container_name: jenkins
+  ##create volume dir sudo mkdir ~/jenkins
+  #volumes:
+  ##mkdir ~/jenkinsvoldir
+  ##chmod -R +777 ~/jenkinsvoldir
+   #- ~/jenkinsvoldir:/var/jenkins_home
+   #- /var/run/docker.sock:/var/run/docker.sock
+   #- /usr/local/bin/docker:/usr/local/bin/docker
+  #environment:
+   #- JAVA_OPTS=-Dhudson.model.DownloadService.noSignatureCheck=true
  api-gateway:
   image: 'pc1204a/api-gateway:v01'
   #container_name: api-gateway
@@ -83,7 +83,7 @@ services:
   networks:
    frontendnetwork:
   ports:
-   - '8581-8585:8585'
+   - '8584-8585:8585'
   depends_on:
    - 'configurations-server'
    - 'eureka-service-registry'
@@ -94,14 +94,62 @@ services:
    - 'configurations-server'
    - 'eureka-service-registry'
    - 'mysqldb'
+   - 'authorization-server'
   networks:
    frontendnetwork:
     #ipv4_address: 172.21.0.11
   #expose:
    #- 8181
   ports:
-   - '8181-8182:8181'
+   - '8180-8181:8181'
   depends_on:
    - 'configurations-server'
    - 'mysqldb'
    - 'eureka-service-registry'
+   - 'authorization-server'
+  #These opts props not supporting yet
+  environment:
+   - 'JVM_OPTS=-Xmx200m -Xms200m -XX:MaxPermSize=128m'
+   - 'CATALINA_OPTS=-Xmx312g -Xms312g -XX:MaxPermSize=300m'
+ authorization-server:
+  image: 'pc1204a/authorization-server:v01'
+  #container_name: authorization-server
+  links:
+   - 'configurations-server'
+   - 'eureka-service-registry'
+   - 'mysqldb'
+  networks:
+   frontendnetwork:
+    #ipv4_address: 172.21.0.11
+  #expose:
+   #- 8181
+  ports:
+   - '8089-8090:8090'
+  depends_on:
+   - 'configurations-server'
+   - 'mysqldb'
+   - 'eureka-service-registry'
+  #These opts props not supporting yet
+  environment:
+   - 'JVM_OPTS=-Xmx200m -Xms200m -XX:MaxPermSize=128m'
+   - 'CATALINA_OPTS=-Xmx312g -Xms312g -XX:MaxPermSize=300m'
+ applyjobservice:
+  image: 'pc1204a/applyjobservice:v01'
+  #container_name: applyjobservice
+  links:
+   - 'configurations-server'
+   - 'eureka-service-registry'
+   - 'mysqldb'
+   - 'authorization-server'
+  networks:
+   frontendnetwork:
+    #ipv4_address: 172.21.0.11
+  #expose:
+   #- 8181
+  ports:
+   - '8680-8681:8681'
+  depends_on:
+   - 'configurations-server'
+   - 'mysqldb'
+   - 'eureka-service-registry'
+   - 'authorization-server'

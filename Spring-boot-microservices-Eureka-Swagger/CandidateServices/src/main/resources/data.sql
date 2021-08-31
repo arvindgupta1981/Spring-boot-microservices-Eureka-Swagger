@@ -1,9 +1,9 @@
- DROP TABLE IF EXISTS candidate;
+ DROP TABLE IF EXISTS CANDIDATE;
  
- create table candidate (
+ create table CANDIDATE (
  id int AUTO_INCREMENT PRIMARY KEY,
  name varchar(100) NOT NULL
  );
- insert into candidate(name) values('Arvind');
- insert into candidate(name) values('Kamal');
+ insert into CANDIDATE(name) values('Arvind');
+ insert into CANDIDATE(name) values('Kamal');
  

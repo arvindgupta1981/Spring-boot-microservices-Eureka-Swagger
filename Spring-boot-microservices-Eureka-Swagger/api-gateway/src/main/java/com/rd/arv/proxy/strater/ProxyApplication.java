@@ -19,13 +19,13 @@ import com.rd.arv.proxy.filters.AuthenticationAuthPreFilter;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableDiscoveryClient
-@ComponentScan(basePackages = "com.rd.arv.proxy")
+//@ComponentScan(basePackages = "com.rd.arv.proxy")
 public class ProxyApplication {	
 	public static void main(String... args) {
 		SpringApplication.run(ProxyApplication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	public AuthenticationAuthPreFilter authenticationAuthPreFilter() {
 	    return new AuthenticationAuthPreFilter();
 	}
@@ -42,5 +42,5 @@ public class ProxyApplication {
 			template.setInterceptors(interceptors);
 		}
 		return template;
-	}
+	}*/
 }
