@@ -1,0 +1,24 @@
+IAM stands for Identity Access Management. |Manage roles users- FREE - GROUP, ROLES, Permissions, USER
+root user
+
+Delegation - grant permissions
+trusted acct- hold ownership of resource
+trusting acct - need access
+
+Federation - trust relationship between aws acct and external service provider
+Trust policy:- json doc that tell who is allowed to use a role
+
+Permissions policy: A document written in JSON format to define the actions and resources that the role can use.
+
+Permissions boundary: It is an advanced feature of AWS in which you can limit the maximum permissions that the role can have.
+
+Principal: A principal can be AWS root account user, an IAM User, or a role. 
+	
+Cross-account access: Roles vs Resource-Based Policies: It allows you to grant access to the resources in one account to the trusted principal in another account is known as cross-account access.
+
+IAM Roles Use Cases
+IAM Console: When IAM Users working in the IAM Console and want to use the role, then they access the permissions of the role temporarily.
+Programmatic Access: An AWS service such as Amazon EC2 instance can use role by requesting temporary security credentials using the programmatic requests to AWS.
+	
+ 
+

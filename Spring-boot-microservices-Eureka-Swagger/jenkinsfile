@@ -1,0 +1,170 @@
+pipeline {
+    environment {
+        registryconfig = "pc1204a/configurations-server"
+        registryeureka = "pc1204a/netflix-eureka-server"
+        registryapigateway = "pc1204a/api-gateway"
+        registrycandidate = "pc1204a/candidate-service"
+        registryapplyjob = "pc1204a/applyjobservice"
+        registryautheserver = "pc1204a/authorization-server"
+        
+        registryCredential = "docker-hub-id"
+        
+        dockerImageconfig = ''
+        dockerImageeureka = ''
+        dockerImageapigateway = ''
+        dockerImagecandidate = ''
+        dockerImageapplyjob = ''
+        dockerImageauthserver = ''
+    }
+   
+    agent any
+    tools {
+      maven 'mvn3.8.2'
+    }
+    stages {
+        stage('Echo- Cloning Git') {
+           
+            steps {
+                git branch: 'Docker', url: 'https://github.com/arvindgupta1981/Spring-boot-microservices-Eureka-Swagger.git'
+               
+                dir('Spring-boot-microservices-Eureka-Swagger/') {
+                    sh "mvn clean verify"
+                }
+                dir('Spring-boot-microservices-Eureka-Swagger/central-oauth2-server/') {
+                    sh "mvn clean verify"
+                }
+               
+               
+            }
+        }
+        stage('Echo buildng image') {
+            parallel {
+                stage('Echo buildng image configuration-server') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/configurations-server/') {
+                                dockerImageconfig = docker.build registryconfig + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+                stage('Echo buildng image eureka-server') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/netflix-eureka-server/') {
+                                dockerImageeureka = docker.build registryeureka + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+                stage('Echo buildng image APT GATEWAY') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/api-gateway/') {
+                                dockerImageapigateway = docker.build registryapigateway + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+                stage('Echo buildng image CandidateServices service') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/CandidateServices/') {
+                                dockerImagecandidate = docker.build registrycandidate + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+                stage('Echo buildng image applyjobservice') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/applyjobservice/') {
+                                dockerImageapplyjob = docker.build registryapplyjob + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+                stage('Echo buildng image auth server') {    
+                    steps {
+                        script {
+                            dir('Spring-boot-microservices-Eureka-Swagger/central-oauth2-server/') {
+                                dockerImageauthserver = docker.build registryautheserver + ":$BUILD_NUMBER"
+                            }
+                        }
+                    }       
+                }
+            }
+           
+        }
+        
+        
+            
+        stage('Publish images into Docker hub ') {
+            parallel {
+                stage('Publish images into Docker hub -config server ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImageconfig.push()
+                            }
+                        }
+                    }
+                }
+                stage('Publish images into Docker hub -eureka server ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImageeureka.push()
+                            }
+                        }
+                    }
+                }
+                stage('Publish images into Docker hub -api gateway server ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImageapigateway.push()
+                            }
+                        }
+                    }
+                }
+                stage('Publish images into Docker hub -candidate service ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImagecandidate.push()
+                            }
+                        }
+                    }
+                }
+                stage('Publish images into Docker hub -applyjobservice ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImageapplyjob.push()
+                            }
+                        }
+                    }
+                }
+                stage('Publish images into Docker hub -auth server ') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImageauthserver.push()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+            
+        
+        
+        stage('clean image') {
+            steps {
+                sh "docker rmi $registryconfig:$BUILD_NUMBER $registryeureka:$BUILD_NUMBER $registryapigateway:$BUILD_NUMBER $registrycandidate:$BUILD_NUMBER $registryautheserver:$BUILD_NUMBER $registryapplyjob:$BUILD_NUMBER"
+                
+            }
+        }
+    }
+}
